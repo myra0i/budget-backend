@@ -9,6 +9,8 @@ require('dotenv').config()
 
 const PORT = process.env.PORT
 
+
+
 //middleware
 
 app.use(express.json())
@@ -21,6 +23,7 @@ readdirSync('./routes').map((route)=> app.use('/api/v1', require(('./routes/' + 
 
 app.use(express.static(path.join(__dirname + "/public")))
 app.use(express.static('/var/www/html'));
+
 
 const server = ()=> {
     db()
